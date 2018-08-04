@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- Either we can use this <bean id="pid" class="com.java.Spring.Samples.Product"> 
+		<constructor-arg value="1"></constructor-arg> <constructor-arg value="Omkar"></constructor-arg> 
+		<constructor-arg value="1646.25"></constructor-arg> <constructor-arg ref="vendor"></constructor-arg> 
+		</bean> -->
+
+	<!-- Or You can use this -->
+
+	<bean id="pidc" class="com.java.Spring.Samples.Product" autowire="constructor">
+		<constructor-arg type="int" value="10" ></constructor-arg>
+		<constructor-arg type="String" value="omkar"></constructor-arg>
+		<constructor-arg type="double" value="1456.23"></constructor-arg>
+		<constructor-arg ref="vendor"></constructor-arg>
+	</bean>
+
+	<bean id="pidp" class="com.java.Spring.Samples.Product">
+		<property name="productid" value="3"></property>
+		<property name="productName" value="ABC"></property>
+		<property name="productPrice" value="30056.45"></property>
+		<property name="vendor" ref="vendor"></property>
+	</bean>
+	<bean id="vendor" class="com.java.Spring.Samples.Vendor">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="ketaki"></constructor-arg>
+		<constructor-arg value="Pune"></constructor-arg>
+	</bean>
+</beans>
+
+
+ 
